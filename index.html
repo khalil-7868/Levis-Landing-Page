@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
   <link rel="stylesheet" href="style.css">
   <title>Levi</title>
 </head>
@@ -30,9 +31,9 @@
 
       <div class="categories">
         <ul>
-          <li>Men</li>
-          <li>Women</li>
-          <li>Kids</li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Kids</a></li>
         </ul>
       </div>
 
@@ -43,9 +44,9 @@
 
     <div class="media">
       <ul>
-        <li>Facebook</li>
-        <li>Instagram</li>
-        <li>Twitter</li>
+        <!-- <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li> -->
+        <li><a href="#">Twitter</a></li>
       </ul>
     </div>
 
@@ -59,7 +60,12 @@
       </ul>
     </div>
 
-    <img class="product-img" src="levi-shirt.png" alt="">
+    <div class="product-img" id="shirt-slider">
+      <img src="shirt-1.png" alt="t-shirt">
+      <img src="shirt-2.png" alt="t-shirt">
+      <img src="shirt-3.png" alt="t-shirt">
+      <img src="shirt-4.png" alt="t-shirt">
+    </div>
 
     <div class="product-text">
       <h1 class="product-title">colorblock</h1>
@@ -74,17 +80,16 @@
     </div>
 
     <div class="bottomnav">
-      <div class="bottomnav-img"></div>
-
       <ul>
-        <li><i class="fa fa-chevron-left"></i></li>
-        <li><i class="fa fa-chevron-right"></i></li>
+        <li id="shirt-back"><i class="fa fa-chevron-left"></i></li>
+        <li id="shirt-next"><i class="fa fa-chevron-right"></i></li>
       </ul>
     </div>
 
   </div>
 
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   <script type="text/javascript">
 
     TweenMax.from(".left", 1.6, {
@@ -204,7 +209,17 @@
       ease: Expo.easeInOut
     });
 
-
+    // shirt-slider
+    var slider = tns({
+      container: '#shirt-slider',
+      items: 1,
+      mode: "gallery",
+      autoplay: false,
+      prevButton: "#shirt-back",
+      nextButton: "#shirt-next",
+      navContainer: '.dots',
+      speed: 800,
+    });
   </script>
 </body>
 
